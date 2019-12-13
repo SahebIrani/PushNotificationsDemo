@@ -1,0 +1,31 @@
+{
+    "ConnectionStrings": {
+        "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=PushNotificationsDB;Trusted_Connection=True;MultipleActiveResultSets=true"
+    },
+    "Logging": {
+        "LogLevel": {
+            "Default": "Information",
+            "Microsoft": "Warning",
+            "Microsoft.Hosting.Lifetime": "Information"
+        }
+    },
+    "IdentityServer": {
+        "Clients": {
+            "SImple": {
+                "Profile": "IdentityServerSPA"
+            }
+        }
+    },
+    "AllowedHosts": "*",
+
+    "PushNotifications": {
+        "PublicKey": "BMBuVtMBpcgwRtUNttNj2yXP3PGCSrf_fT94pCb1Bdl1JDnH8_CSK0GXqa8hOAkLq1EYnTH__zaXhy5jLoJ4s2A",
+        "PrivateKey": "6GJW3jlOQonru2IsakRLpqj2d6qURK2C9GCZSlYwKq8"
+    },
+
+    "VapidDetails": {
+        "Subject": "https://localhost:50001",
+        "PublicKey": "BE_X6ClUt5zeEh2fTavCsI2jxiM2UP7uareZ95GSBayKSwrWt78gdYwb9_qGY7jg1GFk9KFAtp9gFYy1kS4Ie94",
+        "PrivateKey": "qgSxPcKLgiUwqZ8MZ1Po_ypGNJ_q5qkHIFdPwDKavgU"
+    }
+}
