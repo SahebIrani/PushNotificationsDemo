@@ -21,7 +21,6 @@ import { AuthorizeInterceptor } from 'src/api-authorization/authorize.intercepto
 import { NotificationsComponent } from './notifications/notifications.component';
 import { NotificationService } from './core/generated';
 import { BroadcastComponent } from './broadcast/broadcast.component';
-import { DrinkingComponent } from './drinking/drinking.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +32,7 @@ import { DrinkingComponent } from './drinking/drinking.component';
     CounterComponent,
     FetchDataComponent,
     NotificationsComponent,
-    BroadcastComponent,
-    DrinkingComponent
+    BroadcastComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -43,7 +41,7 @@ import { DrinkingComponent } from './drinking/drinking.component';
     ApiAuthorizationModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'drinking', component: DrinkingComponent },
+      { path: 'drinking', component: DrinkingComponent},
       { path: 'notifications', component: NotificationsComponent },
       { path: 'broadcast', component: BroadcastComponent },
       { path: 'weather-forecast', component: WeatherForecastComponent },

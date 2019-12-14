@@ -33,8 +33,7 @@ import { DrinkingComponent } from './drinking/drinking.component';
     CounterComponent,
     FetchDataComponent,
     NotificationsComponent,
-    BroadcastComponent,
-    DrinkingComponent
+    BroadcastComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

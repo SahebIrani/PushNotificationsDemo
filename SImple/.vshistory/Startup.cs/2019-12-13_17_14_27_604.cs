@@ -1,6 +1,4 @@
 
-using AngularSignalR.Hubs;
-
 using Demo.AspNetCore.Angular.PushNotifications.Services;
 
 using Lib.Net.Http.WebPush;
@@ -76,8 +74,6 @@ namespace SImple
 						   .Build());
 			});
 
-			services.AddSignalR();
-
 			services.Configure<PushNotificationsOptions>(Configuration.GetSection("PushNotifications"));
 			services.AddSingleton<IPushSubscriptionsService, PushSubscriptionsService>();
 			services.AddHttpClient<PushServiceClient>();
@@ -120,8 +116,6 @@ namespace SImple
 					name: "default",
 					pattern: "{controller}/{action=Index}/{id?}");
 				endpoints.MapRazorPages();
-
-				endpoints.MapHub<DrinkingHub>("/drinking");
 			});
 
 			app.UseSpa(spa =>

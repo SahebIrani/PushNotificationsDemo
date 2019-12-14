@@ -53,6 +53,8 @@ namespace SImple
 				configuration.RootPath = "ClientApp/dist";
 			});
 
+			services.AddSignalR();
+
 			var vapidDetails = new VapidDetails(
 				Configuration.GetValue<string>("VapidDetails:Subject"),
 				Configuration.GetValue<string>("VapidDetails:PublicKey"),
@@ -75,8 +77,6 @@ namespace SImple
 							 "https://localhost:5001")
 						   .Build());
 			});
-
-			services.AddSignalR();
 
 			services.Configure<PushNotificationsOptions>(Configuration.GetSection("PushNotifications"));
 			services.AddSingleton<IPushSubscriptionsService, PushSubscriptionsService>();

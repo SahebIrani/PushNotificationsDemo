@@ -1,6 +1,4 @@
 
-using AngularSignalR.Hubs;
-
 using Demo.AspNetCore.Angular.PushNotifications.Services;
 
 using Lib.Net.Http.WebPush;
@@ -53,6 +51,8 @@ namespace SImple
 				configuration.RootPath = "ClientApp/dist";
 			});
 
+			services.AddSignalR();
+
 			var vapidDetails = new VapidDetails(
 				Configuration.GetValue<string>("VapidDetails:Subject"),
 				Configuration.GetValue<string>("VapidDetails:PublicKey"),
@@ -75,8 +75,6 @@ namespace SImple
 							 "https://localhost:5001")
 						   .Build());
 			});
-
-			services.AddSignalR();
 
 			services.Configure<PushNotificationsOptions>(Configuration.GetSection("PushNotifications"));
 			services.AddSingleton<IPushSubscriptionsService, PushSubscriptionsService>();
@@ -121,7 +119,7 @@ namespace SImple
 					pattern: "{controller}/{action=Index}/{id?}");
 				endpoints.MapRazorPages();
 
-				endpoints.MapHub<DrinkingHub>("/drinking");
+				//endpoints.MapHub<DrinkingHub>("/drinking");
 			});
 
 			app.UseSpa(spa =>
